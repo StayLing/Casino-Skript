@@ -1,0 +1,445 @@
+# Yaml
+
+Load:
+    YAML()
+
+function YAML():
+    load yaml "/plugins/Casino/Config.yml" as "config"
+    if yaml "config" is empty:
+        set yaml value "Casino.Prefix" from "config" to "&fᴄᴀsɪɴᴏ &8&L>"
+        set yaml value "Casino.Status" from "config" to "true"
+        set yaml value "Casino.Only-Permission.Status" from "config" to "false"
+        set yaml value "Casino.Only-Permission.Permission" from "config" to "Casino.*"
+
+        set yaml value "Games.Slot-Machine.Status" from "config" to "true"
+        set yaml value "Games.Slot-Machine.Spin-Time" from "config" to "0.2"
+        set yaml value "Games.Slot-Machine.Pricing.Type" from "config" to "Specific"
+        set yaml value "Games.Slot-Machine.Pricing.Specific.Price" from "config" to "500"
+        set yaml value "Games.Slot-Machine.Pricing.Variable.Min-Price" from "config" to "500"
+        set yaml value "Games.Slot-Machine.Pricing.Variable.Max-Price" from "config" to "1000"
+        set yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Type" from "config" to "chat"
+        set yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Chat.Waiting-Time" from "config" to "15"
+        set yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Chat.Sound-Effect.Status" from "config" to "true"
+        set yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Chat.Sound-Effect.Sound" from "config" to "ui.button.click"
+        
+        set yaml value "Games.Slot-Machine.Multiplier.S1" from "config" to "1.2"
+        set yaml value "Games.Slot-Machine.Multiplier.S2" from "config" to "1.3"
+        set yaml value "Games.Slot-Machine.Multiplier.S3" from "config" to "1.4"
+        
+        set yaml value "Games.Slot-Machine.Gift-Bonus.Status" from "config" to "true"
+        set yaml value "Games.Slot-Machine.Gift-Bonus.Chance" from "config" to "15"
+        set yaml value "Games.Slot-Machine.Gift-Bonus.Multiplier" from "config" to "10"
+        
+        set yaml value "Games.Slot-Machine.Lose-Bonus.Status" from "config" to "true"
+        set yaml value "Games.Slot-Machine.Lose-Bonus.Percent" from "config" to "10"
+        
+        set yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Status" from "config" to "true"
+        set yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Sound" from "config" to "entity.experience_orb.pickup"
+        
+        set yaml value "Games.Slot-Machine.Sound-Effect.MaxWin.Status" from "config" to "true"
+        set yaml value "Games.Slot-Machine.Sound-Effect.MaxWin.Sound" from "config" to "ui.toast.challenge_complete"
+        
+        set yaml value "Games.Slot-Machine.Sound-Effect.Win.Status" from "config" to "true"
+        set yaml value "Games.Slot-Machine.Sound-Effect.Win.Sound" from "config" to "entity.player.levelup"
+        
+        set yaml value "Games.Slot-Machine.Sound-Effect.Lose.Status" from "config" to "true"
+        set yaml value "Games.Slot-Machine.Sound-Effect.Lose.Sound" from "config" to "entity.villager.death"
+        
+        set yaml value "Games.Slot-Machine.FireWork.MaxWin.Status" from "config" to "true"
+        set yaml value "Games.Slot-Machine.FireWork.Win.Status" from "config" to "true"
+
+        save yaml "config"
+
+    load yaml "/plugins/Casino/Gui.yml" as "gui"
+    if yaml "gui" is empty:
+        set yaml value "Menu.Main-Menu.Gui-Rows" from "gui" to "3"
+        set yaml value "Menu.Main-Menu.Gui-Name" from "gui" to "ᴏɴʟɪɴᴇ ᴄᴀsɪɴᴏ"
+
+        set yaml value "Menu.Main-Menu.Fill-Item.Status" from "gui" to "true"
+        set yaml value "Menu.Main-Menu.Fill-Item.Name" from "gui" to "&r"
+        set yaml value "Menu.Main-Menu.Fill-Item.Material" from "gui" to "gray stained glass pane"
+        set yaml value "Menu.Main-Menu.Fill-Item.CustomModelData.Status" from "gui" to "false"
+        set yaml value "Menu.Main-Menu.Fill-Item.CustomModelData.ID" from "gui" to ""
+
+        set yaml value "Menu.Main-Menu.Slot-Machine.Name" from "gui" to "&esʟᴏᴛ ᴍᴀᴋıɴᴇsı"
+        add "" and "&7ᴍᴀᴋɪɴᴇ ᴇᴋʀᴀɴıɴᴅᴀ ᴜᴄ ʏᴀᴅᴀ" and "&7ᴅᴀʜᴀ ғᴀᴢʟᴀ sᴀʏıᴅᴀ ᴍᴀᴋᴀʀᴀ ʙᴜʟᴜɴᴜʀ  " and "" and "&7ᴍᴀᴋᴀʀᴀʟᴀʀ ᴅᴏɴᴅᴜᴋᴛᴇɴ sᴏɴʀᴀ" and "&7ᴇᴋʀᴀɴᴅᴀᴋɪ ʜɪᴢᴀᴅᴀ ᴅᴜʀᴀɴ" and "&7sᴇᴍʙᴏʟʟᴇʀᴇ ɢᴏʀᴇ ᴍᴜsᴛᴇʀıʏᴇ" and "&7ᴏᴅᴇᴍᴇ ʏᴀᴘıʟıʀ" and "" and "&eᴜᴄʀᴇᴛ: &f{Price}" and "" and "&eᴏʏɴᴀᴍᴀᴋ ıᴄıɴ ᴛıᴋʟᴀ" to yaml list "Menu.Main-Menu.Slot-Machine.Lore" from "gui"
+        set yaml value "Menu.Main-Menu.Slot-Machine.Slot" from "gui" to "13"
+        set yaml value "Menu.Main-Menu.Slot-Machine.Material" from "gui" to "totem of undying"
+        set yaml value "Menu.Main-Menu.Slot-Machine.CustomModelData.Status" from "gui" to "false"
+        set yaml value "Menu.Main-Menu.Slot-Machine.CustomModelData.ID" from "gui" to ""
+
+        set yaml value "Menu.Slot-Machine-Spin.Gui-Name" from "gui" to "sʟᴏᴛ ᴍᴀᴋɪɴᴇsɪ ᴅᴏɴᴜʏᴏʀ"
+
+        set yaml value "Menu.Slot-Machine-Spin.1.Material" from "gui" to "wheat"
+        set yaml value "Menu.Slot-Machine-Spin.1.CustomModelData.Status" from "gui" to "false"
+        set yaml value "Menu.Slot-Machine-Spin.1.CustomModelData.ID" from "gui" to ""
+
+        set yaml value "Menu.Slot-Machine-Spin.2.Material" from "gui" to "carrot"
+        set yaml value "Menu.Slot-Machine-Spin.2.CustomModelData.Status" from "gui" to "false"
+        set yaml value "Menu.Slot-Machine-Spin.2.CustomModelData.ID" from "gui" to ""
+
+        set yaml value "Menu.Slot-Machine-Spin.3.Material" from "gui" to "melon slice"
+        set yaml value "Menu.Slot-Machine-Spin.3.CustomModelData.Status" from "gui" to "false"
+        set yaml value "Menu.Slot-Machine-Spin.3.CustomModelData.ID" from "gui" to ""
+        
+        set yaml value "Menu.Slot-Machine-Bet.Gui-Name" from "gui" to "ʙᴀʜɪs ᴍɪᴋᴛᴀʀıɴı ɢɪʀɪɴ"
+        
+        set yaml value "Menu.Slot-Machine-Bet.Confirm.Material" from "gui" to "sunflower"
+        set yaml value "Menu.Slot-Machine-Bet.Confirm.CustomModelData.Status" from "gui" to "false"
+        set yaml value "Menu.Slot-Machine-Bet.Confirm.CustomModelData.ID" from "gui" to ""
+
+        save yaml "gui"
+        
+    load yaml "/plugins/Casino/Language.yml" as "language"
+    if yaml "language" is empty:
+        set yaml value "Language.Insufficient-Balance" from "language" to "&cBu oyunu oynamak için bakiyeniz yetersiz!"
+        set yaml value "Language.Warn.Permission" from "language" to "&cBu komutu kullanabilmek için gerekli izinlere sahip değilsin!"
+        set yaml value "Language.Warn.Transaction-Canceled" from "language" to "&cİşlem iptal edildi!"
+        set yaml value "Language.Slot-Machine.MaxWin" from "language" to "&aSlot makinesinden &fMAXWIN &aaldınız, kazandığınız tutar &f{Money}!"
+        set yaml value "Language.Slot-Machine.Win" from "language" to "&aSlot makinesinden kazandığınız tutar &f{Money}!"
+        set yaml value "Language.Slot-Machine.Lose" from "language" to "&cKaybettiniz!"
+        set yaml value "Language.Slot-Machine.Lose-Bonus" from "language" to "&cKaybettiğiniz için hesabınız &f{Money} &ctutarında kaybetme bonusu hesabınıza yatırıldı!"
+        set yaml value "Language.Slot-Machine.WarnBet" from "language" to "&cGireceğiniz bet sayısı &f{Money} &caralığında olmalıdır!"
+        
+        save yaml "language"
+        
+# Commands
+
+command casino [<text>]:
+    trigger:
+        if yaml value "Casino.Status" from "config" is true:
+            if arg-1 is set:
+                if arg-1 is "reload":
+                    if "plugins/Skript/scripts/%script's name%" exist:
+                        if sender is console:
+                            execute console command "sk reload %script's name%"
+                        if sender is player:
+                            if player has permission "op":
+                                execute player command "sk reload %script's name%"
+            else:
+                if yaml value "Casino.Only-Permission.Status" from "config" is true:
+                    if player has permission "%(yaml value "Casino.Only-Permission.Permission" from "config")%":
+                        MainMenu(player)
+                    else:
+                        send "%nl%%(yaml value "Casino.Prefix" from "config")% %(yaml value "Language.Warn.Permission" from "language")%%nl%" to player
+                else:
+                    MainMenu(player)
+        
+# Functions
+        
+function MainMenu(p: player):
+    create a gui with virtual chest inventory with size yaml value "Menu.Main-Menu.Gui-Rows" from "gui" named yaml value "Menu.Main-Menu.Gui-Name" from "gui":
+        if yaml value "Menu.Main-Menu.Fill-Item.Status" from "gui" is true:
+            if yaml value "Menu.Main-Menu.Fill-Item.CustomModelData.Status" from "gui" is true:
+                set {_Item::1} to (yaml value "Menu.Main-Menu.Fill-Item.Material" from "gui" parsed as item)
+                set custom model data of {_Item::1} to (yaml value "Menu.Main-Menu.Fill-Item.CustomModelData.ID" from "gui" parsed as number)
+                make gui slot (integers between 0 and (yaml value "Menu.Main-Menu.Gui-Rows" from "gui")*9-1) with {_Item} named yaml value "Menu.Main-Menu.Fill-Item.Name" from "gui"
+            else:
+                make gui slot (integers between 0 and (yaml value "Menu.Main-Menu.Gui-Rows" from "gui")*9-1) with (yaml value "Menu.Main-Menu.Fill-Item.Material" from "gui" parsed as item) named yaml value "Menu.Main-Menu.Fill-Item.Name" from "gui"
+        if yaml value "Games.Slot-Machine.Status" from "config" is true:
+            if yaml value "Games.Slot-Machine.Pricing.Type" from "config" is "Variable":
+                replace all "{Price}" with "%(yaml value "Games.Slot-Machine.Pricing.Variable.Min-Price" from "config")% - %(yaml value "Games.Slot-Machine.Pricing.Variable.Max-Price" from "config")%" in yaml list "Menu.Main-Menu.Slot-Machine.Lore" from "gui"
+            else:
+                replace all "{Price}" with "%(yaml value "Games.Slot-Machine.Pricing.Specific.Price" from "config")%" in yaml list "Menu.Main-Menu.Slot-Machine.Lore" from "gui"
+            if yaml value "Menu.Main-Menu.Slot-Machine.CustomModelData.Status" from "gui" is true:
+                set {_Item::2} to (yaml value "Menu.Main-Menu.Slot-Machine.Material" from "gui" parsed as item)
+                set custom model data of {_Item::2} to (yaml value "Menu.Main-Menu.Slot-Machine.CustomModelData.ID" from "gui" parsed as number)
+                make gui slot yaml value "Menu.Main-Menu.Slot-Machine.Slot" from "gui" with {_Item::2} named yaml value "Menu.Main-Menu.Slot-Machine.Name" from "gui" with lore (colored yaml list "Menu.Main-Menu.Slot-Machine.Lore" from "gui"):
+                    if yaml value "Games.Slot-Machine.Pricing.Type" from "config" is "Variable":
+                        if yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Type" from "config" is "chat":
+                            Chat(player)
+                        if yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Type" from "config" is "anvil":
+                            Anvil(player)
+                    else:
+                        if {_p}'s balance >= yaml value "Games.Slot-Machine.Pricing.Specific.Price" from "config":
+                            remove yaml value "Games.Slot-Machine.Pricing.Specific.Price" from "config" from the player's balance
+                            set {_SPrice} to "%(yaml value "Games.Slot-Machine.Pricing.Specific.Price" from "config")%"
+                            SlotMachine(player, {_SPrice})
+                        else:
+                            send "%nl%%(yaml value "Casino.Prefix" from "config")% %(yaml value "Language.Insufficient-Balance" from "language")%%nl%" to {_p}
+            else:
+                make gui slot yaml value "Menu.Main-Menu.Slot-Machine.Slot" from "gui" with (yaml value "Menu.Main-Menu.Slot-Machine.Material" from "gui" parsed as item) named yaml value "Menu.Main-Menu.Slot-Machine.Name" from "gui" with lore (colored yaml list "Menu.Main-Menu.Slot-Machine.Lore" from "gui"):
+                    if yaml value "Games.Slot-Machine.Pricing.Type" from "config" is "Variable":
+                        if yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Type" from "config" is "chat":
+                            Chat(player)
+                        if yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Type" from "config" is "anvil":
+                            Anvil(player)
+                    else:
+                        if {_p}'s balance >= yaml value "Games.Slot-Machine.Pricing.Specific.Price" from "config":
+                            remove yaml value "Games.Slot-Machine.Pricing.Specific.Price" from "config" from the player's balance
+                            set {_SPrice} to "%(yaml value "Games.Slot-Machine.Pricing.Specific.Price" from "config")%"
+                            SlotMachine(player, {_SPrice})
+                        else:
+                            send "%nl%%(yaml value "Casino.Prefix" from "config")% %(yaml value "Language.Insufficient-Balance" from "language")%%nl%" to {_p}
+    open last gui to {_p}
+    
+function SlotMachine(p: player, price: text):
+    set {GamePlay::%{_p}%} to true
+    if {_price} isn't number:
+        set {_price} to {_price} parsed as number
+    
+    delete {SMS::0::%{_p}%}
+    delete {SMS::1::%{_p}%}
+    delete {SMS::2::%{_p}%}
+    delete {SMS::3::%{_p}%}
+    delete {SMS::4::%{_p}%}
+    delete {SMS::5::%{_p}%}
+    delete {SMS::6::%{_p}%}
+    delete {SMS::7::%{_p}%}
+    delete {SMS::8::%{_p}%}
+
+    set {_GN} to yaml value "Menu.Slot-Machine-Spin.Gui-Name" from "gui"
+        
+    set {Item::1} to yaml value "Menu.Slot-Machine-Spin.1.Material" from "gui" parsed as item
+    if yaml value "Menu.Slot-Machine-Spin.1.CustomModelData.Status" from "gui" is true:
+        set custom model data of {Item::1} to (yaml value "Menu.Slot-Machine-Spin.1.CustomModelData.ID" from "gui" parsed as number)
+             
+    set {Item::2} to yaml value "Menu.Slot-Machine-Spin.2.Material" from "gui" parsed as item
+    if yaml value "Menu.Slot-Machine-Spin.2.CustomModelData.Status" from "gui" is true:
+        set custom model data of {Item::2} to (yaml value "Menu.Slot-Machine-Spin.2.CustomModelData.ID" from "gui" parsed as number)
+             
+    set {Item::3} to yaml value "Menu.Slot-Machine-Spin.3.Material" from "gui" parsed as item
+    if yaml value "Menu.Slot-Machine-Spin.3.CustomModelData.Status" from "gui" is true:
+        set custom model data of {Item::3} to (yaml value "Menu.Slot-Machine-Spin.3.CustomModelData.ID" from "gui" parsed as number)
+             
+    if yaml value "Games.Slot-Machine.Gift-Bonus.Status" from "config" is true:
+        chance of yaml value "Games.Slot-Machine.Gift-Bonus.Chance" from "config"%:
+            set {_GN} to "&e⭐ &r%(yaml value "Menu.Slot-Machine-Spin.Gui-Name" from "gui")% &e⭐"
+            set {_MW} to true
+        else:
+            set {_GN} to yaml value "Menu.Slot-Machine-Spin.Gui-Name" from "gui"
+            
+    SlotMachineSpin({_p}, {_GN})
+    wait "%(yaml value "Games.Slot-Machine.Spin-Time" from "config")% seconds" parsed as timespan
+    if yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Status" from "config" is true: 
+        play sound yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Sound" from "config" at volume 1 to {_p}
+             
+    set {SMS::0::%{_p}%} to {Item::1} or {Item::2} or {Item::3}
+    SlotMachineSpin({_p}, {_GN})
+    wait "%(yaml value "Games.Slot-Machine.Spin-Time" from "config")% seconds" parsed as timespan
+    if yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Status" from "config" is true: 
+        play sound yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Sound" from "config" at volume 1 to {_p}
+    
+    set {SMS::1::%{_p}%} to {Item::3} or {Item::2} or {Item::1}
+    SlotMachineSpin({_p}, {_GN})
+    wait "%(yaml value "Games.Slot-Machine.Spin-Time" from "config")% seconds" parsed as timespan
+    if yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Status" from "config" is true: 
+        play sound yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Sound" from "config" at volume 1 to {_p}
+    
+    set {SMS::2::%{_p}%} to {Item::2} or {Item::1} or {Item::3}
+    SlotMachineSpin({_p}, {_GN})
+    wait "%(yaml value "Games.Slot-Machine.Spin-Time" from "config")% seconds" parsed as timespan
+    if yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Status" from "config" is true: 
+        play sound yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Sound" from "config" at volume 1 to {_p}
+    
+    set {SMS::3::%{_p}%} to {Item::3} or {Item::2} or {Item::1}
+    SlotMachineSpin({_p}, {_GN})
+    wait "%(yaml value "Games.Slot-Machine.Spin-Time" from "config")% seconds" parsed as timespan
+    if yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Status" from "config" is true: 
+        play sound yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Sound" from "config" at volume 1 to {_p}
+    
+    set {SMS::4::%{_p}%} to {Item::1} or {Item::2} or {Item::3}
+    SlotMachineSpin({_p}, {_GN})
+    wait "%(yaml value "Games.Slot-Machine.Spin-Time" from "config")% seconds" parsed as timespan
+    if yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Status" from "config" is true: 
+        play sound yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Sound" from "config" at volume 1 to {_p}
+    
+    set {SMS::5::%{_p}%} to {Item::2} or {Item::1} or {Item::3}
+    SlotMachineSpin({_p}, {_GN})
+    wait "%(yaml value "Games.Slot-Machine.Spin-Time" from "config")% seconds" parsed as timespan
+    if yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Status" from "config" is true: 
+        play sound yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Sound" from "config" at volume 1 to {_p}
+    
+    set {SMS::6::%{_p}%} to {Item::1} or {Item::2} or {Item::3}
+    SlotMachineSpin({_p}, {_GN})
+    wait "%(yaml value "Games.Slot-Machine.Spin-Time" from "config")% seconds" parsed as timespan
+    if yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Status" from "config" is true: 
+        play sound yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Sound" from "config" at volume 1 to {_p}
+    
+    set {SMS::7::%{_p}%} to {Item::3} or {Item::2} or {Item::1}
+    SlotMachineSpin({_p}, {_GN})
+    wait "%(yaml value "Games.Slot-Machine.Spin-Time" from "config")% seconds" parsed as timespan
+    if yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Status" from "config" is true: 
+        play sound yaml value "Games.Slot-Machine.Sound-Effect.Spinning.Sound" from "config" at volume 1 to {_p}
+    
+    set {SMS::8::%{_p}%} to {Item::2} or {Item::1} or {Item::3}
+    SlotMachineSpin({_p}, {_GN})
+
+    set {_s0::%{_p}%} to {SMS::0::%{_p}%}
+    set {_s1::%{_p}%} to {SMS::1::%{_p}%}
+    set {_s2::%{_p}%} to {SMS::2::%{_p}%}
+    set {_s3::%{_p}%} to {SMS::3::%{_p}%}
+    set {_s4::%{_p}%} to {SMS::4::%{_p}%}
+    set {_s5::%{_p}%} to {SMS::5::%{_p}%}
+    set {_s6::%{_p}%} to {SMS::6::%{_p}%}
+    set {_s7::%{_p}%} to {SMS::7::%{_p}%}
+    set {_s8::%{_p}%} to {SMS::8::%{_p}%}
+    
+    if {_s0::%{_p}%} = {_s3::%{_p}%}:
+        if {_s3::%{_p}%} = {_s6::%{_p}%}:
+            set {_Win::1::%{_p}%} to true
+            set {_YW::%{_p}%} to true
+    if {_s1::%{_p}%} = {_s4::%{_p}%}:
+        if {_s4::%{_p}%} = {_s7::%{_p}%}:
+            set {_Win::2::%{_p}%} to true
+            set {_YW::%{_p}%} to true
+    if {_s2::%{_p}%} = {_s5::%{_p}%}:
+        if {_s5::%{_p}%} = {_s8::%{_p}%}:
+            set {_YW::%{_p}%} to true
+            set {_Win::3::%{_p}%} to true
+    if {_Win::1::%{_p}%} is true:
+        set {_Total::1::%{_p}%} to ({_price} * yaml value "Games.Slot-Machine.Multiplier.S1" from "config")
+    if {_Win::2::%{_p}%} is true:
+        set {_Total::2::%{_p}%} to ({_price} * yaml value "Games.Slot-Machine.Multiplier.S2" from "config")
+    if {_Win::3::%{_p}%} is true:
+        set {_Total::3::%{_p}%} to ({_price} * yaml value "Games.Slot-Machine.Multiplier.S3" from "config")
+    if {_YW::%{_p}%} is true:
+        if {_MW} is true:
+            delete {_MWP}
+            set {_Money::%{_p}%} to ({_Total::1::%{_p}%} + {_Total::2::%{_p}%})
+            set {_Money2::%{_p}%} to ({_Money::%{_p}%} + {_Total::3::%{_p}%})
+            set {_TotalM::%{_p}%} to ({_Money2::%{_p}%} * yaml value "Games.Slot-Machine.Gift-Bonus.Multiplier" from "config")
+            add {_TotalM::%{_p}%} to balance of {_p}
+            set {_MWP} to yaml value "Language.Slot-Machine.MaxWin" from "language"
+            replace all "{Money}" with "%{_TotalM::%{_p}%}%" in {_MWP}
+            send "%nl%%(yaml value "Casino.Prefix" from "config")% %{_MWP}%%nl%" to {_p}
+            delete {GamePlay::%{_p}%}
+            if yaml value "Games.Slot-Machine.Sound-Effect.MaxWin.Status" from "config" is true: 
+                play sound yaml value "Games.Slot-Machine.Sound-Effect.MaxWin.Sound" from "config" at volume 3 to {_p}
+            if yaml value "Games.Slot-Machine.FireWork.MaxWin.Status" from "config" is true: 
+                set {_loc} to {_p}'s location
+                set {_fr} to flickering ball large firework effect coloured blue and lime and red and green
+                loop 4 times:
+                    launch {_fr} at {_loc} timed 1
+                    launch {_fr} at {_loc} timed 2
+                    launch {_fr} at {_loc} timed 3
+            if {SM::%{_p}%::Price} is true:
+                set {SM::%{_p}%::Price} to false
+                delete {SM::%{_p}%::Time}
+        else:
+            delete {_SMW}
+            set {_Money::%{_p}%} to ({_Total::1::%{_p}%} + {_Total::2::%{_p}%})
+            set {_Money2::%{_p}%} to ({_Money::%{_p}%} + {_Total::3::%{_p}%})
+            add {_Money2::%{_p}%} to balance of {_p}
+            set {_SMW} to yaml value "Language.Slot-Machine.Win" from "language"
+            replace all "{Money}" with "%{_Money2::%{_p}%}%" in {_SMW}
+            send "%nl%%(yaml value "Casino.Prefix" from "config")% %{_SMW}%%nl%" to {_p}
+            delete {GamePlay::%{_p}%}
+            if yaml value "Games.Slot-Machine.Sound-Effect.Win.Status" from "config" is true: 
+                play sound yaml value "Games.Slot-Machine.Sound-Effect.Win.Sound" from "config" at volume 1 to {_p}
+            if yaml value "Games.Slot-Machine.FireWork.Win.Status" from "config" is true: 
+                set {_loc} to {_p}'s location
+                set {_fr} to flickering ball large firework effect coloured green
+                loop 2 times:
+                    launch {_fr} at {_loc} timed 2
+            if {SM::%{_p}%::Price} is true:
+                set {SM::%{_p}%::Price} to false
+                delete {SM::%{_p}%::Time}
+    else:
+        if yaml value "Games.Slot-Machine.Lose-Bonus.Status" from "config" is true:
+            delete {_M}
+            set {_M} to ({_price} / (yaml value "Games.Slot-Machine.Lose-Bonus.Percent" from "config"))
+            set {_LB} to yaml value "Language.Slot-Machine.Lose-Bonus" from "language"
+            replace all "{Money}" with "%{_M}%" in {_LB}
+            send "%nl%%(yaml value "Casino.Prefix" from "config")% %{_LB}%%nl%" to {_p}
+            add {_M} to balance of {_p}
+            delete {GamePlay::%{_p}%}
+            if yaml value "Games.Slot-Machine.Sound-Effect.Lose.Status" from "config" is true: 
+                play sound yaml value "Games.Slot-Machine.Sound-Effect.Lose.Sound" from "config" at volume 1 to {_p}
+        else:
+            if yaml value "Games.Slot-Machine.Sound-Effect.Lose.Status" from "config" is true: 
+                play sound yaml value "Games.Slot-Machine.Sound-Effect.Lose.Sound" from "config" at volume 1 to {_p}
+            send "%nl%%(yaml value "Casino.Prefix" from "config")% %(yaml value "Language.Slot-Machine.Lose" from "language")%%nl%" to {_p}
+            delete {GamePlay::%{_p}%}
+        if {SM::%{_p}%::Price} is true:
+            set {SM::%{_p}%::Price} to false
+            delete {SM::%{_p}%::Time}
+    
+function SlotMachineSpin(p: player, gn: text):
+    create a gui with virtual dropper inventory with size 1 named "%{_GN}%":
+        make gui slot 0 with {SMS::0::%{_p}%} named "&r"
+        make gui slot 3 with {SMS::1::%{_p}%} named "&r"
+        make gui slot 6 with {SMS::2::%{_p}%} named "&r"
+        make gui slot 1 with {SMS::3::%{_p}%} named "&r"
+        make gui slot 4 with {SMS::4::%{_p}%} named "&r"
+        make gui slot 7 with {SMS::5::%{_p}%} named "&r"
+        make gui slot 2 with {SMS::6::%{_p}%} named "&r"
+        make gui slot 5 with {SMS::7::%{_p}%} named "&r"
+        make gui slot 8 with {SMS::8::%{_p}%} named "&r"
+    open last gui to {_p}
+    
+# Chat
+    
+function Chat(p: player):
+    replace all "{Money}" with "%(yaml value "Games.Slot-Machine.Pricing.Variable.Min-Price" from "config")% - %(yaml value "Games.Slot-Machine.Pricing.Variable.Max-Price" from "config")%" in yaml value "Language.Slot-Machine.WarnBet" from "language"
+    send "%nl%%(yaml value "Casino.Prefix" from "config")% %(yaml value "Language.Slot-Machine.WarnBet" from "language")%%nl%" to {_p}
+    set {SM::%{_p}%::Price} to true
+    set {SM::%{_p}%::Time} to yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Chat.Waiting-Time" from "config"
+    close {_p}'s inventory
+    loop yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Chat.Waiting-Time" from "config" time:
+        wait 1 second
+        loop all players:
+            if {SM::%loop-player%::Price} is true:
+                if {SM::%loop-player%::Time} >= 1:
+                    remove 1 from {SM::%loop-player%::Time}
+                    send action bar "&c%{SM::%loop-player%::Time}%" to loop-player
+                    if yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Chat.Sound-Effect.Status" from "config" is true:
+                        play sound yaml value "Games.Slot-Machine.Pricing.Variable.Payment-Setting.Chat.Sound-Effect.Sound" from "config" at volume 1 to loop-player
+            if {SM::%loop-player%::Time} <= 0:
+                set {SM::%loop-player%::Price} to false
+                delete {SM::%loop-player%::Time}
+    
+chat:
+    if {SM::%player%::Price} is true:
+        cancel event
+        set {_1} to yaml value "Games.Slot-Machine.Pricing.Variable.Min-Price" from "config"
+        set {_2} to yaml value "Games.Slot-Machine.Pricing.Variable.Max-Price" from "config"
+        set {_number} to message parsed as number
+        if {_number} is between {_1} and {_2}:
+            if player's balance >= {_number}:
+                remove {_number} from the player's balance
+                SlotMachine(player, message)
+                set {SM::%player%::Price} to false
+                delete {SM::%{_p}%::Time}
+            else:
+                send "%nl%%(yaml value "Casino.Prefix" from "config")% %(yaml value "Language.Insufficient-Balance" from "language")%%nl%" to player
+                set {SM::%player%::Price} to false
+                delete {SM::%{_p}%::Time}
+        else:
+            replace all "{Money}" with "%(yaml value "Games.Slot-Machine.Pricing.Variable.Min-Price" from "config")% - %(yaml value "Games.Slot-Machine.Pricing.Variable.Max-Price" from "config")%" in yaml value "Language.Slot-Machine.WarnBet" from "language"
+            send "%nl%%(yaml value "Casino.Prefix" from "config")% %(yaml value "Language.Slot-Machine.WarnBet" from "language")%%nl%" to player
+            
+# Anvil
+            
+function Anvil(p: player):
+    set {_gui} to a new anvil gui named yaml value "Menu.Slot-Machine-Bet.Gui-Name" from "gui" with default text "&r"
+    set {_item} to yaml value "Menu.Slot-Machine-Bet.Confirm.Material" from "gui" parsed as item
+    if yaml value "Menu.Slot-Machine-Bet.Confirm.CustomModelData.Status" from "gui" is true:
+        set custom model data of {_item} to (yaml value "Menu.Slot-Machine-Bet.Confirm.CustomModelData.ID" from "gui" parsed as number)
+    set left item of {_gui} to {_item}
+    set {Bet::%{_p}%} to true
+    open anvil gui {_gui} to {_p}
+
+on anvil gui click:
+    if {Bet::%player%} is true:
+        if event-integer is 2:
+            set {_1} to yaml value "Games.Slot-Machine.Pricing.Variable.Min-Price" from "config"
+            set {_2} to yaml value "Games.Slot-Machine.Pricing.Variable.Max-Price" from "config"
+            set {_number} to event-text parsed as number
+            if {_number} is between {_1} and {_2}:
+                if player's balance >= {_number}:
+                    remove {_number} from the player's balance
+                    SlotMachine(player, event-text)
+                    set {Bet::%player%} to false
+                else:
+                    send "%nl%%(yaml value "Casino.Prefix" from "config")% %(yaml value "Language.Insufficient-Balance" from "language")%%nl%" to player
+                    set {SM::%player%::Price} to false
+            else:
+                replace all "{Money}" with "%(yaml value "Games.Slot-Machine.Pricing.Variable.Min-Price" from "config")% - %(yaml value "Games.Slot-Machine.Pricing.Variable.Max-Price" from "config")%" in yaml value "Language.Slot-Machine.WarnBet" from "language"
+                send "%nl%%(yaml value "Casino.Prefix" from "config")% %(yaml value "Language.Slot-Machine.WarnBet" from "language")%%nl%" to player
+            
+on anvil gui close:
+    if {Bet::%player%} is true:
+        if {GamePlay::%player%} isn't set:
+            set {Bet::%player%} to false
+            send "%nl%%(yaml value "Casino.Prefix" from "config")% %(yaml value "Language.Warn.Transaction-Canceled" from "language")%%nl%" to player
